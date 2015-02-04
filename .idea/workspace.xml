@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="441a12ef-30dd-4298-b27a-0a1334f5cbdb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/_my_style.css" afterPath="$PROJECT_DIR$/css/_my_style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PouchToDo.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="441a12ef-30dd-4298-b27a-0a1334f5cbdb" time="1423064062600" ignored="false" />
+    <file path="/Dummy.txt" changelist="441a12ef-30dd-4298-b27a-0a1334f5cbdb" time="1423064081262" ignored="false" />
     <file path="/index.html" changelist="441a12ef-30dd-4298-b27a-0a1334f5cbdb" time="1423059895011" ignored="false" />
     <file path="/_my_style.css" changelist="441a12ef-30dd-4298-b27a-0a1334f5cbdb" time="1423055017497" ignored="false" />
     <file path="/_my_utils.js" changelist="441a12ef-30dd-4298-b27a-0a1334f5cbdb" time="1423063934007" ignored="false" />
@@ -30,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="51" selection-start="998" selection-end="998" vertical-scroll-proportion="0.3101998">
+            <state line="24" column="51" selection-start="998" selection-end="998" vertical-scroll-proportion="-5.7843137">
               <folding />
             </state>
           </provider>
@@ -48,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_my_utils.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_my_utils.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/_my_utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="47" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
+            <state line="21" column="34" selection-start="480" selection-end="480" vertical-scroll-proportion="0.25449103">
               <folding />
             </state>
           </provider>
@@ -247,7 +246,11 @@
       <created>1423064067393</created>
       <updated>1423064067393</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Удалось добиться занесения инф. в бд, очистики списка на странице. Проблема - не удается вывести список всех документов из бд.">
+      <created>1423064097466</created>
+      <updated>1423064097466</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -429,16 +432,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/_my_utils.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="47" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.0">
+        <state line="24" column="51" selection-start="998" selection-end="998" vertical-scroll-proportion="-5.7843137">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/_my_utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="51" selection-start="998" selection-end="998" vertical-scroll-proportion="0.3101998">
+        <state line="21" column="34" selection-start="480" selection-end="480" vertical-scroll-proportion="0.25449103">
           <folding />
         </state>
       </provider>
