@@ -16,24 +16,52 @@ $( document ).ready(function() {
         };
         db.put(todo, function callback(err, result) {
             if (!err) {
-                console.log('Successfully posted a todo!');
+                console.log('Successfully posted a ' +  todo.title);
             }
         });
     }
+    // Show the current list of todos by reading them from the database
+    function showTodos() {
+        console.log("showTodos run!");
+        db.allDocs({include_docs:true, descending:true}, function(err, doc){
+            console.log(doc.title);
+            redrawTodosUI(doc.rows);
+        });
+    }
+    function redrawTodosUI(todos) {
+        console.log("redrawTodosUI run!");
+        todos.forEach(function(todo) {
+            $("._list_to_do").append("<li class='_item'>" + todo.title + "</li>");
+        });
+    }
 
-   // основной цикл - изменение формы
+
+
+
+    // основной цикл - изменение формы
    $("#_go_form").change(function(){
 
        var  _text_to_do = $("#_go_form").val();
        $("._list_to_do").append("<li class='_item'>" + _text_to_do + "</li>");
        addTodo(_text_to_do);
-       $("#_go_form").val(" ");
+       $("#_go_form").val('');
 
     });   // #_go_form
 
+    // очистка поля html-формы, БД не трогаем
+      $("#_clear_btn").click(function(){
+
+           $("._item").remove();
+
+      });
+
+    // вывод на экран всей базы данных
+    $("#_show_btn").click(function(){
+        console.log("_show_btn click");
+        showTodos();
 
 
-    //var db = new PouchDB('todos');
-    //var remoteCouch = false;
+    });
 
-});
+});  // end main()
+
