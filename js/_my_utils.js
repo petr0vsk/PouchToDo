@@ -24,14 +24,15 @@ $( document ).ready(function() {
     function showTodos() {
         console.log("showTodos run!");
         db.allDocs({include_docs:true, descending:true}, function(err, doc){
-            console.log(doc.title);
+           // console.log(doc.rows);
             redrawTodosUI(doc.rows);
         });
     }
     function redrawTodosUI(todos) {
         console.log("redrawTodosUI run!");
         todos.forEach(function(todo) {
-            $("._list_to_do").append("<li class='_item'>" + todo.title + "</li>");
+            $("._list_to_do").append("<li class='_item'>" + todo.doc.title + "</li>");
+            //console.log(todo.doc.title);
         });
     }
 
