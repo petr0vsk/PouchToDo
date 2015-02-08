@@ -1,0 +1,14 @@
+#_head > div {
+    min-height: 40px;
+    background-color: #ffff00;
+}
+
+#_todo_container   {
+    background-color: lightgrey;
+    height:100vh ;
+}
+
+#_add_note {
+    background-color: yellowgreen;
+    min-height: 40px;
+}
