@@ -7,11 +7,14 @@
     <title>Список дел на базе PouchDB-CouchDB</title>
 
     <!-- Bootstrap -->
+
    <link rel="stylesheet" href="css/bootstrap.css">
    <script src="js/jquery-2.1.3.js"></script>
    <script src="js/bootstrap.js"></script>
     <!--- PouchDB -->
+    <script src="js/pouchdb-erase.js"></script>
     <script src="js/pouchdb-3.2.1.min.js"></script>
+
 
    <!-- Include all compiled plugins (below), or include individual files as needed -->
    <script src="js/_my_utils.js"></script>
@@ -40,7 +43,8 @@
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button" id="_go_btn">Go!</button>
                         <button class="btn btn-default" type="button" id="_show_btn">Show All!</button>
-                        <button class="btn btn-default" type="button" id="_clear_btn">Clear!</button>
+                        <button class="btn btn-default" type="button" id="_clear_html_btn">Clear Form!</button>
+                        <button class="btn btn-default" type="button" id="_clear_db_btn">Clear DB!</button>
                       </span>
             </div><!-- /input-group -->
 
@@ -51,7 +55,7 @@
     <div class="row" id="_todo_container">
         <div class="col-sm-12">
             <ul class="_list_to_do">
-                <li class = "_item">Начало славных дел</li>
+                <li class = "_item"></li>
             </ul>
 
 
