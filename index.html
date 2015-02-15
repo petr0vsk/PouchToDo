@@ -7,11 +7,12 @@
     <title>Список дел на базе PouchDB-CouchDB</title>
 
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="css/bootstrap.css">
-   <script src="js/jquery-2.1.3.js"></script>
-   <script src="js/bootstrap.js"></script>
-    <!--- PouchDB -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="js/pouchdb-3.2.1.min.js"></script>
+   <script src="js/jquery-1.10.2.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+       <!--- PouchDB -->
+
 
    <!-- Include all compiled plugins (below), or include individual files as needed -->
    <script src="js/_my_utils.js"></script>
@@ -26,39 +27,58 @@
 <body>
 
 <div class="container-fluid">
-    <div class="row" id="_head">
-        <div class="col-sm-1" id="_icon_left">Иконка</div>
-        <div class="col-sm-8" id="_note">Заметки</div>
-        <div class="col-sm-3" id="_icon_right">Все заметки сохранены</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6" id="_add_note">
-
-            <div class="input-group">
-                <input type="text" class="form-control" id ="_go_form" placeholder="Новая заметка...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="_go_btn">Go!</button>
-                        <button class="btn btn-default" type="button" id="_show_btn">Show All!</button>
-                        <button class="btn btn-default" type="button" id="_clear_btn">Clear!</button>
-                      </span>
-            </div><!-- /input-group -->
-
-        </div>   <!-- /.col-lg-6  id="_add_note" -->
-        <div class="col-sm-3"></div>
-    </div>
-
-    <div class="row" id="_todo_container">
-        <div class="col-sm-12">
-            <ul class="_list_to_do">
-                <li class = "_item">Начало славных дел</li>
-            </ul>
-
+    <!-- заголовок -->
+    <div class="row" class="text-center" id="_head">
+        <div class="col-sm-1" id="_icon_left">
+            <button class="btn btn_default btn-lg _my_btn" >
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-sm-1" id="_note_left">
+            <span>Заметки</span>
+        </div>
+        <div class="col-sm-10" class="text-right" id="_head_right">
+            <span>Все заметки сохранены</span>
+        <button class="btn btn_default btn-lg _my_btn" >
+            <span class="glyphicon glyphicon glyphicon-repeat" aria-hidden="true"></span>
+        </button>
+        <button class="btn btn_default btn-lg _my_btn" >
+             <span class="glyphicon glyphicon glyphicon-th-large" aria-hidden="true"></span>
+         </button>
 
         </div>
+    </div> <!-- /_head -->
+    <!-- форма ввода новых дел -->
+    <div class="row" id="_input">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="_input_form">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Новая заметка...">
+                      <span class="input-group-btn" role ="group">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                      </span>
+                            </div><!-- /input-group -->
+            <div class="col-sm-3"></div>
+        </div>
     </div>
+    <!-- / форма ввода новых дел -->
+    <!-- область размещения карточек с заметками -->
+    <div class="row" id="_note">
+        <div class="col-sm-12">
 
-</div>
+        </div>
+
+    </div>
+    <!-- / область размещения карточек с заметками -->
+
+
+
+</div> <!-- end main ... container-fluid -->
 
 </body>
 </html>

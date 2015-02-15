@@ -1,29 +1,45 @@
-#_head > div {
-    min-height: 40px;
-    background-color: #ffff00;
+body {
+    background-color: #e8e8e8;
+    color: #333;
+    direction: ltr;
+    font-family: 'Roboto','Droid Sans',arial,sans-serif;
+    font-size: 14px;
+}
+.glyphicon {
+    cursor: pointer;
 }
 
-#_todo_container   {
-    background-color: lightgrey;
-    height:100vh ;
-}
-
-#_add_note {
-    background-color: yellowgreen;
-    min-height: 40px;
-}
-
-.input-group {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    vertical-align: middle;
-
+#_head {
+    background: #ffbb00;
+    height: 48px;
 
 }
-#_go_form {
 
-    paddin: 5px;
+._my_btn {
+    background-color: #ffbb00;
+
+}
+
+#_note_left {
+    padding: 14px 0px 12px 0px;
+}
+
+#_head_right  {
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.728;
+    padding: 0px 0px 12px 0px;
+
+}
+#_head_right span {
+    display: inline-block;
+    padding: 0px 15px 0px 15px;
+}
+#_input {
+    padding: 14px;
+}
+
+#_note {
+    padding: 14px;
 }
