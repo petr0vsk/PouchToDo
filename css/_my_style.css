@@ -43,3 +43,13 @@ body {
 #_note {
     padding: 14px;
 }
+
+._item {
+    list-style-type: none;
+    background-color: darkgoldenrod;
+    margin: 10px 10px 10px 10px;
+}
+
+.red {
+    background-color: red;
+}

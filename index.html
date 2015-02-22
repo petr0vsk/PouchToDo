@@ -7,58 +7,87 @@
     <title>Список дел на базе PouchDB-CouchDB</title>
 
     <!-- Bootstrap -->
-   <link rel="stylesheet" href="css/bootstrap.css">
-   <script src="js/jquery-2.1.3.js"></script>
-   <script src="js/bootstrap.js"></script>
-    <!--- PouchDB -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="js/pouchdb-3.2.1.min.js"></script>
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/jquery.gridster.js"></script>
+    <link rel="stylesheet" href="css/jquery.gridster.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/handlebars-v3.0.0.js"></script>
+    <!--- PouchDB -->
 
-   <!-- Include all compiled plugins (below), or include individual files as needed -->
-   <script src="js/_my_utils.js"></script>
-   <link rel="stylesheet" href="css/_my_style.css">
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/_my_utils.js"></script>
+    <link rel="stylesheet" href="css/_my_style.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
 
 <div class="container-fluid">
-    <div class="row" id="_head">
-        <div class="col-sm-1" id="_icon_left">Иконка</div>
-        <div class="col-sm-8" id="_note">Заметки</div>
-        <div class="col-sm-3" id="_icon_right">Все заметки сохранены</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6" id="_add_note">
-
-            <div class="input-group">
-                <input type="text" class="form-control" id ="_go_form" placeholder="Новая заметка...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="_go_btn">Go!</button>
-                        <button class="btn btn-default" type="button" id="_show_btn">Show All!</button>
-                        <button class="btn btn-default" type="button" id="_clear_btn">Clear!</button>
-                      </span>
-            </div><!-- /input-group -->
-
-        </div>   <!-- /.col-lg-6  id="_add_note" -->
-        <div class="col-sm-3"></div>
-    </div>
-
-    <div class="row" id="_todo_container">
-        <div class="col-sm-12">
-            <ul class="_list_to_do">
-                <li class = "_item">Начало славных дел</li>
-            </ul>
-
+    <!-- заголовок -->
+    <div class="row" class="text-center" id="_head">
+        <div class="col-sm-1" id="_icon_left">
+            <button class="btn btn_default btn-lg _my_btn" >
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-sm-1" id="_note_left">
+            <span>Заметки</span>
+        </div>
+        <div class="col-sm-10" class="text-right" id="_head_right">
+            <span>Все заметки сохранены</span>
+            <button class="btn btn_default btn-lg _my_btn" >
+                <span class="glyphicon glyphicon glyphicon-repeat" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn_default btn-lg _my_btn" >
+                <span class="glyphicon glyphicon glyphicon-th-large" aria-hidden="true"></span>
+            </button>
 
         </div>
+    </div> <!-- /_head -->
+    <!-- форма ввода новых дел -->
+    <div class="row" id="_input">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="_input_form">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Новая заметка...">
+                      <span class="input-group-btn" role ="group">
+                            <button class="btn btn-default" type="button" id="_show_all">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn btn-default" type="button" id="_erase_all">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </button>
+                      </span>
+            </div><!-- /input-group -->
+            <div class="col-sm-3"></div>
+        </div>
     </div>
+    <!-- / форма ввода новых дел -->
+    <!-- область размещения карточек с заметками -->
+    <div class="row" id="_note">
+        <div class="col-sm-12 gridster">
+               <ul id="_workplace"></ul>
+        </div>
+    </div>
+    <!-- / область размещения карточек с заметками -->
 
-</div>
+</div> <!-- end main ... container-fluid -->
 
+
+<!--вставим шаблон -->
+<script id="entry-template" type="text/x-handlebars-template">
+    <li class="_item">
+        {{title}}
+    </li>
+
+</script>
 </body>
 </html>
+
