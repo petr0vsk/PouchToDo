@@ -48,6 +48,8 @@ $( document ).ready(function() {
                        };
 
             $("#_workplace").append(template(todo)).children().last().data("id", todo._id);
+            //$("#_workplace").sortable();
+            //$("#_workplace").disableSelection();
             //$(this).children().last().data("id", todo.doc._id);
         });
     }
@@ -57,7 +59,7 @@ $( document ).ready(function() {
     });
 
     // удалим запись из БД после клика по заметке на экране
-    $('ul').on('click', 'li',  function(){
+    $('ul').on('dblclick', 'li',  function(){
         var doc_id = $(this).data("id");
         db.query(function(doc, emit) {
             if (doc._id === doc_id) {
@@ -74,9 +76,23 @@ $( document ).ready(function() {
         // $(".gridster ul").append("<li data-row='1' data-col='1' data-sizex='1' data-sizey='1'>" + _text_to_do + "</li>");
          _add_Todo(_text_to_do);
          $("input").val('');
+       //$("#_workplace").sortable();
+       //$("#_workplace").disableSelection();
+    });
+    $('ul').on('mouseenter', 'li',  function(){
+       $(this).resizable();
+    });
+    $('ul').on('mouseover', 'li',  function(){
+        $(this).addClass('red');
+    });
+    $('ul').on('mouseleave', 'li',  function(){
+        $(this).removeClass('red');
     });
 
 
+
+   $("#_workplace").sortable();
+   $("#_workplace").disableSelection();
 
 
 

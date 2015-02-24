@@ -48,8 +48,17 @@ body {
     list-style-type: none;
     background-color: darkgoldenrod;
     margin: 10px 10px 10px 10px;
+    float: left;
+    width: 100px;
+    height: 90px;
+    text-align: center;
 }
 
 .red {
     background-color: red;
+}
+#_workplace {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
