@@ -40,25 +40,85 @@ body {
     padding: 14px;
 }
 
-#_note {
-    padding: 14px;
+._note {
+
+    margin: 5px 10px 5px 10px;
+    contentEditable: "true";
 }
 
 ._item {
     list-style-type: none;
     background-color: darkgoldenrod;
     margin: 10px 10px 10px 10px;
+    position:relative;
     float: left;
-    width: 100px;
-    height: 90px;
-    text-align: center;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+
 }
 
-.red {
-    background-color: red;
+.raised {
+
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
+
+.raised:before,
+.raised:after {
+    content:"";
+    position:absolute;
+    z-index:-2;
+}
+
 #_workplace {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+._left {
+    position: relative;
+    float: left;
+    margin-left: 5px;
+
+
+}
+
+._right {
+    position: relative;
+    float: right;
+    margin-right: 5px;
+}
+._title {
+    position: relative;
+
+    text-align: center;
+}
+.ui-widget-header {
+    text-align: center;
+}
+
+.editable-area {
+
+}
+.red {
+    background-color: red;
+}
+
+.over-inline {
+    background-color: #FFFACD;
+}
+
+.active-inline {
+    background-color: inherit;
+}
+
+.active-inline textarea {
+    height: 10em;
+    width: 100%;
 }

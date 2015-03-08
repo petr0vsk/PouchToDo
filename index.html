@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/jquery.gridster.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="js/handlebars-v3.0.0.js"></script>
+    <script src="js/jquery.jeditable.mini.js"></script>
     <!--- PouchDB -->
 
 
@@ -85,11 +86,15 @@
 
 <!--вставим шаблон -->
 <script id="entry-template" type="text/x-handlebars-template">
-    <li class="_item" class="ui-widget-content">
-        <div class="ui-widget-header">{{title}}</div>
-        <input class="toggle" type="checkbox"/>
-        <div class="_note">12345</div>
-        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <li class="_item ui-widget-content">
+        <div class="ui-widget-header">
+            <div class="_left"><input class="toggle" type="checkbox"/></div>
+            <span class="_title">{{title}}</span>
+            <div class="_right"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+        </div>
+        <div class="_note" >12345</div>
+
+
     </li>
 
 </script>

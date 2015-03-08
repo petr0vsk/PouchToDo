@@ -10,7 +10,7 @@ $( document ).ready(function() {
     var remoteCouch = false;
 
     // объявим шаблоны handlebars
-    var template   =  Handlebars.compile( $('#entry-template').html() );
+    var template   =  Handlebars.compile($('#entry-template').html());
 
 
 
@@ -48,9 +48,7 @@ $( document ).ready(function() {
                        };
 
             $("#_workplace").append(template(todo)).children().last().data("id", todo._id);
-            //$("#_workplace").sortable();
-            //$("#_workplace").disableSelection();
-            //$(this).children().last().data("id", todo.doc._id);
+
         });
     }
     // очистка поля html-формы, БД не трогаем
@@ -58,9 +56,9 @@ $( document ).ready(function() {
         $("._item").remove();
     });
 
-    // удалим запись из БД после клика по заметке на экране
-    $('ul').on('dblclick', 'li',  function(){
-        var doc_id = $(this).data("id");
+    // удалим запись из БД после клика по крестику на заметке
+    $('ul').on('click', '._right', function(){
+        var doc_id = $(this).closest('li').data("id");
         db.query(function(doc, emit) {
             if (doc._id === doc_id) {
                 emit(doc);
@@ -68,25 +66,57 @@ $( document ).ready(function() {
             }
         }, function(err, results) {
                     });
-                    $(this).remove();
+              $(this).closest('li').remove();
     });
+    // изменим содержимое дважды кликнув по заметке
+
+
     // основной цикл - добавление новых записей в БД
    $("input").change(function(){
          var  _text_to_do = $("input").val();
-        // $(".gridster ul").append("<li data-row='1' data-col='1' data-sizex='1' data-sizey='1'>" + _text_to_do + "</li>");
          _add_Todo(_text_to_do);
          $("input").val('');
-       //$("#_workplace").sortable();
-       //$("#_workplace").disableSelection();
+
     });
     $('ul').on('mouseenter', 'li',  function(){
-       $(this).resizable();
-    });
-    $('ul').on('mouseover', 'li',  function(){
-        $(this).addClass('red');
-    });
-    $('ul').on('mouseleave', 'li',  function(){
-        $(this).removeClass('red');
+       $(this).resizable(
+           {
+               handles: "s, e",
+               maxHeight: 300,
+               maxWidth: 300,
+               minHeight: 100,
+               minWidth: 150
+           }
+
+       );
+    }).on('mouseover', 'li',  function(){
+        $(this).addClass('raised');
+    }).on('mouseleave', 'li',  function(){
+        $(this).removeClass('raised');
+    }).on('dblclick', '._note', function(){
+        $(this).editable(function(value, settings) {
+            //console.log(this);
+            console.log(value);
+            //console.log(settings);
+            return(value);
+        }, {
+            type      : 'text',
+            onblur    : 'submit',
+            tooltip   : 'DBClick to edit...',
+            event     : 'dblclick'
+        });
+    }).on('dblclick', '._title', function(){
+        $(this).editable(function(value, settings) {
+            //console.log(this);
+            console.log(value);
+            //console.log(settings);
+            return(value);
+        }, {
+            type      : 'textarea',
+            onblur    : 'submit',
+            tooltip   : 'DBClick to edit...',
+            event     : 'dblclick'
+        });
     });
 
 
